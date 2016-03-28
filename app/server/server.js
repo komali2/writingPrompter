@@ -9,6 +9,10 @@ app.get('/', function(req, res){
 
 app.get('/prompter.js', function(req, res){
   res.sendFile(__dirname + '/../client/prompter.js');
+});
+
+app.get('/style.css', function(req, res){
+  res.sendFile(__dirname + '/../client/style.css');
 })
 
 app.listen(3000, function(){
