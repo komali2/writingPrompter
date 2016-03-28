@@ -1,8 +1,8 @@
 var app = angular.module('writingPrompter', []);
 
 // Returns a random number between min (inclusive) and max (exclusive)
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
+function randArrayElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
 
@@ -13,13 +13,13 @@ function getRandomArbitrary(min, max) {
     this.promptList.push(prompt1, prompt2)
 
     this.promptShow = function(){
-      var ourRandomNumber = getRandomArbitrary(0, this.promptList.length);
-      return this.promptList[ourRandomNumber];
+      return randArrayElement(this.promptList);
     }
   });
 
   app.controller('promptController', function($scope, promptServicer){
     $scope.promptShow = function(){
+      console.log('hello');
       $scope.prompt = promptServicer.promptShow();
     }
   });
