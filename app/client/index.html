@@ -7,8 +7,8 @@
   </head>
   <body ng-app="writingPrompter">
       <div id='container' ng-controller="promptController">
-          <span id='clicker'><h1 ng-click="promptShow()"> Click here to display a prompt!</h1></span>
-          <span id='promptArea'>{{ prompt }}</span>
+          <span id='clicker'><button id='button' type='button' ng-click="promptShow()"> New Prompt</button></span>
+          <div id='promptArea'>{{ prompt }}</div>
       </div>
   </body>
 </html>

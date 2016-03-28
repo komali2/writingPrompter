@@ -1,3 +1,7 @@
+/*
+style: http://paletton.com/#uid=33M0u0ksutJhCBymDvauynIzSiI
+*/
+
 body{
   background-color: #e0e0e0;
 }
@@ -10,11 +14,31 @@ body{
   color: #607abc;
   margin-left: auto;
   margin-right: auto;
-  margin-top: auto;
+  margin-top: 100px;
   margin-bottom: auto;
 }
 
+#button{
+  text-align: center;
+  font-size: 15px;
+  height: 50px;
+  width: 400px;
+  margin-bottom: 5px;
+  background-color: #607abc;
+  color: #ffe873;
+}
+
 #promptArea{
+  display:flex;
   background-color: #ffe873;
+  height: 150px;
+  width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 
 }
