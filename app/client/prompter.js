@@ -1,4 +1,8 @@
 var app = angular.module('writingPrompter', []);
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 
   app.service('promptServicer', function(){
     this.promptList = [];
