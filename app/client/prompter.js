@@ -1,4 +1,6 @@
 var app = angular.module('writingPrompter', []);
+
+// Returns a random number between min (inclusive) and max (exclusive)
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -9,8 +11,10 @@ function getRandomArbitrary(min, max) {
     var prompt1 = "Your friend was struck by lightning.";
     var prompt2 = "Describe how fingers feel to fingers.";
     this.promptList.push(prompt1, prompt2)
+
     this.promptShow = function(){
-      return this.promptList[0];
+      var ourRandomNumber = getRandomArbitrary(0, this.promptList.length);
+      return this.promptList[ourRandomNumber];
     }
   });
 
