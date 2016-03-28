@@ -1,18 +1,18 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static(__dirname + '/../client'));
+app.use(express.static(__dirname + '/app/client'));
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/../client/index.html');
+  res.sendFile(__dirname + '/app/client/index.html');
 });
 
 app.get('/prompter.js', function(req, res){
-  res.sendFile(__dirname + '/../client/prompter.js');
+  res.sendFile(__dirname + '/app/client/prompter.js');
 });
 
 app.get('/style.css', function(req, res){
-  res.sendFile(__dirname + '/../client/style.css');
+  res.sendFile(__dirname + '/app/client/style.css');
 })
 
 app.listen(3000, function(){
