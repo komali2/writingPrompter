@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body ng-app="writingPrompter">
-      <div ng-controller="promptController">
-          <h1 ng-click="promptShow()"> Click here to display a prompt!</h1>
-          {{ prompt }}
+      <div id='container' ng-controller="promptController">
+          <span id='clicker'><h1 ng-click="promptShow()"> Click here to display a prompt!</h1></span>
+          <span id='promptArea'>{{ prompt }}</span>
       </div>
   </body>
 </html>
