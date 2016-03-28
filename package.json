@@ -1,0 +1,23 @@
+{
+  "name": "writingprompter",
+  "version": "1.0.0",
+  "description": "### Overview:",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/komali2/MKS-SF-mvp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/komali2/MKS-SF-mvp/issues"
+  },
+  "homepage": "https://github.com/komali2/MKS-SF-mvp#readme"
+}
