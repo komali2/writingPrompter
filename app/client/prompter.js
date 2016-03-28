@@ -6,7 +6,7 @@ var app = angular.module('writingPrompter', []);
     var prompt2 = "Describe how fingers feel to fingers.";
     this.promptList.push(prompt1, prompt2)
     this.promptShow = function(){
-
+      return promptList[0];
     }
   });
 
