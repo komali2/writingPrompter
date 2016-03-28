@@ -11,5 +11,7 @@ var app = angular.module('writingPrompter', []);
   });
 
   app.controller('promptController', function($scope, promptServicer){
-
+    $scope.promptShow = function(){
+      $scope.prompt = promptServicer.promptShow();
+    }
   });
