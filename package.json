@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/komali2/MKS-SF-mvp/issues"
   },
-  "homepage": "https://github.com/komali2/MKS-SF-mvp#readme"
+  "homepage": "https://github.com/komali2/MKS-SF-mvp#readme",
+  "scripts": {
+  "debug": "node debug server.js",
+  "start": "node server.js",
+  "deploy": "gcloud preview app deploy app.yaml --promote --project writingprompter"
+}
 }

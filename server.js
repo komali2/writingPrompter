@@ -15,6 +15,6 @@ app.get('/style.css', function(req, res){
   res.sendFile(__dirname + '/app/client/style.css');
 })
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("Prompter listening on port 3000.");
 });
