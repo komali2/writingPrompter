@@ -82,7 +82,7 @@ app.controller('promptController', function($scope, promptServicer){
   }
 
   $scope.userPromptGet = function(){
-
+    promptServicer.userPromptGet($scope.userPrompt);
   }
 
   $scope.userPromptShow = function(){
