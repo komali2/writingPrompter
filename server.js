@@ -14,6 +14,12 @@ var userPromptsArray = [];
 HELPER FUNCTIONS
 ------------------------*/
 
+function cleanArray(array){
+  if(array.length > 50){
+    array.slice(0, 10);
+  }
+}
+
 //get a random array element
 function randArrayElement(array) {
   return array[Math.floor(Math.random() * array.length)];
