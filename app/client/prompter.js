@@ -44,7 +44,7 @@ app.service('promptServicer', ['$http', function($http){
   }
 
   this.userPromptShow = function(cb){
-    $http.get('/user').then(function(response){
+    $http.get('/user').then(function(res){
       cb(res);
     });
   }
