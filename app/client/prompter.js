@@ -38,18 +38,23 @@ app.service('promptServicer', ['$http', function($http){
   }
 
   this.userPromptSubmit = function(data){
-    $http({
-      method: 'POST',
-      url: '/user',
-      data: data
-    }).then(function success(res){
-      if(res){
-        console.log('User prompt success!', res);
-      }
-    }, function failure(res){
-      if(res){
-        console.log('User prompt failed!', res);
-      }
+    // return $http({
+    //   method: 'POST',
+    //   url: '/user',
+    //   data: {data: data}
+    // }).then(function success(res){
+    //   if(res){
+    //     console.log('User prompt success!', res);
+    //   }
+    // }, function failure(res){
+    //   if(res){
+    //     console.log('User prompt failed!', res);
+    //   }
+    // });
+    var sendMe = {me: data};
+    console.log('data outside http', sendMe);
+    $http.post('/user', sendMe).then(function(response){
+      console.log('woohoo response', response);
     });
   }
 

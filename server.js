@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http');
+var bodyParser = require('body-parser');
 
 var options = {
   host: 'www.reddit.com',
@@ -46,8 +47,9 @@ redReq.on('error', function(e){
 /*----------------------
 ROUTING
 ------------------------*/
-
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/app/client'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/app/client/index.html');
@@ -66,11 +68,8 @@ app.get('/reddit', function(req, res){
 });
 
 app.post('/user', function(req, res){
-
-
-  res.send('We got this!!', req)
+  console.log(req.body);
 });
-
 /*----------------------
 SERVER INIT
 ------------------------*/
