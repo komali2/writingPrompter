@@ -68,7 +68,8 @@ app.get('/reddit', function(req, res){
 });
 
 app.post('/user', function(req, res){
-  console.log(req.body);
+  userPromptsArray.push(req.body.prompt);
+  res.send(userPromptsArray);
 });
 /*----------------------
 SERVER INIT
