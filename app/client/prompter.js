@@ -49,6 +49,12 @@ app.service('promptServicer', ['$http', function($http){
     });
   }
 
+  this.userPromptDelete = function(){
+    $http.delete('/user').then(function(res){
+
+    });
+  }
+
 }]);
 
   /*----------------------
@@ -79,5 +85,9 @@ app.controller('promptController', function($scope, promptServicer){
     promptServicer.userPromptShow(function(res){
       $scope.prompt = res.data;
     });
+  }
+
+  $scope.userPromptDelete = function(){
+    promptServicer.userPromptDelete();
   }
 });
