@@ -7,7 +7,14 @@
   </head>
   <body ng-app="writingPrompter">
       <div id='container' ng-controller="promptController">
-          <span id='clicker'><button id='button' type='button' ng-click="promptShow()"> New Prompt</button></span>
+          <span id='clicker'>
+            <button id='buttonStatic' type='button' ng-click="promptShow()">
+               New Prompt
+             </button>
+             <button id='buttonReddit' type = 'button' ng-click="redditPromptShow()">
+               New Reddit prompt
+            </button>
+          </span>
           <div id='promptArea'>{{ prompt }}</div>
       </div>
   </body>
