@@ -6,7 +6,7 @@ function randArrayElement(array) {
 }
 
   //service function for holding logic
-  app.service('promptServicer', ['$http',function(){
+  app.service('promptServicer', ['$http', function($http){
     this.promptList = [];
     var prompt1 = "Your friend was struck by lightning.";
     var prompt2 = "Describe how fingers feel to fingers.";
@@ -42,7 +42,7 @@ function randArrayElement(array) {
     $scope.redditPromptShow = function(){
       $scope.prompt = 'Loading a prompt...';
       promptServicer.redditPromptShow(function(res){
-        $scope.prompt = res;
+        $scope.prompt = res.data;
       });
     }
   });
