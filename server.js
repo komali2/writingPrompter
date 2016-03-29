@@ -7,7 +7,7 @@ var options = {
   host: 'www.reddit.com',
   path: '/r/writingprompts/new.json?sort=new'
 };
-var promptsArray = [];
+var redditPromptsArray = [];
 var userPromptsArray = [];
 
 /*----------------------
@@ -62,7 +62,7 @@ var redReq = http.get(options, function(res){
     body = JSON.parse(body);
     //adds the titles from the /new prompts into an array
     for(var i = 0; i < body.data.children.length; i++){
-      promptsArray.push(body.data.children[i].data.title);
+      redditPromptsArray.push(body.data.children[i].data.title);
     }
   });
 });
@@ -91,7 +91,7 @@ app.get('/style.css', function(req, res){
 });
 
 app.get('/reddit', function(req, res){
-  res.send(randArrayElement(promptsArray));
+  res.send(randArrayElement(redditPromptsArray));
 });
 
 app.post('/user', function(req, res){
@@ -115,3 +115,9 @@ SERVER INIT
 app.listen(process.env.PORT || 3000, function(){
   console.log("Prompter listening on port 3000.");
 });
+
+/*----------------------
+MAINTENANCE
+------------------------*/
+setInterval(cleanArray(userPromptsArray), 300000);
+setInterval(cleanArray(redditPromptsArray), 300000);
