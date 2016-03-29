@@ -9,6 +9,16 @@ var options = {
 var promptsArray = [];
 
 /*----------------------
+HELPER FUNCTIONS
+------------------------*/
+
+//get a random array element
+function randArrayElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+
+/*----------------------
 REDDIT API
 ------------------------*/
 
@@ -51,7 +61,7 @@ app.get('/style.css', function(req, res){
 });
 
 app.get('/reddit', function(req, res){
-  res.send(promptsArray[0]);
+  res.send(randArrayElement(promptsArray));
 });
 
 /*----------------------
