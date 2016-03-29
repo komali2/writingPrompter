@@ -9,7 +9,7 @@
       <div id='container' ng-controller="promptController">
         <div id='newPromptArea'>
           <input type = 'text' id='userPromptBox' ng-model='userPrompt' />
-          <button id='buttonNewPrompt' type = 'button' ng-click='submitUserPrompt()'>
+          <button id='buttonNewPrompt' type = 'button' ng-click='userPromptSubmit()'>
             Submit Prompt
           </button>
         </div>
@@ -19,7 +19,10 @@
                  New Prompt
                </button>
                <button id='buttonReddit' type = 'button' ng-click="redditPromptShow()">
-                 New Reddit prompt
+                 New Reddit Prompt
+              </button>
+              <button id='buttonUserPrompt' type='button' ng-click='userPromptGet()'>
+                New User Prompt
               </button>
             </span>
           </div>
