@@ -6,7 +6,7 @@ function randArrayElement(array) {
 }
 
   //service function for holding logic
-  app.service('promptServicer', function(){
+  app.service('promptServicer', ['$http',function(){
     this.promptList = [];
     var prompt1 = "Your friend was struck by lightning.";
     var prompt2 = "Describe how fingers feel to fingers.";
@@ -29,7 +29,7 @@ function randArrayElement(array) {
         cb(res);
       });
     }
-  });
+  }]);
 
   //controller for all things dealing with the prompt area in the view, index.html
   app.controller('promptController', function($scope, promptServicer){
