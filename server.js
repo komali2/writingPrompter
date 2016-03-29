@@ -8,15 +8,17 @@ var options = {
 };
 
 var redReq = http.get(options, function(res){
-  console.log('STATUS: ' + res.statusCode);
-  console.log('HEADERS: ' + JSON.stringify(res.headers));
+  //console.log('STATUS: ' + res.statusCode);
+  //console.log('HEADERS: ' + JSON.stringify(res.headers));
 
   var bodyChunks = [];
   res.on('data', function(chunk){
     bodyChunks.push(chunk);
   }).on('end', function(){
     var body = Buffer.concat(bodyChunks);
-    console.log('BODY: ' + body);
+    body = JSON.parse(body);
+    console.log('BODY data keys: ' + Object.keys(body.data.children));
+    console.log('BODY data text:' + JSON.stringify(body.data.children[0].data.title));
   })
 });
 
