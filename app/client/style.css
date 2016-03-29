@@ -18,6 +18,28 @@ body{
   margin-bottom: auto;
 }
 
+#newPromptArea{
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+
+#newPromptArea #userPromptBox{
+  width: 280px;
+}
+
+#buttonNewPrompt{
+  margin-right: auto;
+  margin-top: auto;
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 5px;
+  background-color: #607abc;
+  color: #ffe873;
+}
+
 #getPromptsArea{
   margin-left: auto;
   margin-right: auto;
