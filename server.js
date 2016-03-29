@@ -78,6 +78,7 @@ app.get('/user', function(req, res){
 
 app.delete('/user', function(req, res){
   userPromptsArray.length = 0;
+
   res.send('received delete request');
 });
 /*----------------------

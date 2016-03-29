@@ -50,6 +50,7 @@ app.service('promptServicer', ['$http', function($http){
   }
 
   this.userPromptDelete = function(){
+
     $http.delete('/user').then(function(res){
 
     });
