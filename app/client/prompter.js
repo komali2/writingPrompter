@@ -50,9 +50,7 @@ app.service('promptServicer', ['$http', function($http){
   }
 
   this.userPromptDelete = function(){
-
     $http.delete('/user').then(function(res){
-
     });
   }
 
@@ -61,7 +59,6 @@ app.service('promptServicer', ['$http', function($http){
   /*----------------------
   CONTROLLERS
   ------------------------*/
-
 
   //controller for all index stuff for now
 app.controller('promptController', function($scope, promptServicer){

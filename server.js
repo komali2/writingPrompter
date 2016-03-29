@@ -41,7 +41,6 @@ function validateString(data) {
     return escapeHtml(data);
   }
 
-
 /*----------------------
 REDDIT API
 ------------------------*/
@@ -102,10 +101,10 @@ app.delete('/user', function(req, res){
   userPromptsArray.length = 0;
   res.send('received delete request');
 });
+
 /*----------------------
 SERVER INIT
 ------------------------*/
-
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Prompter listening on port 3000.");
