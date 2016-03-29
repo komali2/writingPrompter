@@ -49,8 +49,6 @@ app.service('promptServicer', ['$http', function($http){
     });
   }
 
-
-
 }]);
 
   /*----------------------

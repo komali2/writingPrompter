@@ -75,6 +75,11 @@ app.post('/user', function(req, res){
 app.get('/user', function(req, res){
   res.send(randArrayElement(userPromptsArray));
 });
+
+app.delete('/user', function(req, res){
+  userPromptsArray.length = 0;
+  res.send('received delete request');
+});
 /*----------------------
 SERVER INIT
 ------------------------*/
