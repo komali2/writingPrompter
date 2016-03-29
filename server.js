@@ -7,6 +7,7 @@ var options = {
   path: '/r/writingprompts/new.json?sort=new'
 };
 var promptsArray = [];
+var userPromptsArray = [];
 
 /*----------------------
 HELPER FUNCTIONS
@@ -62,6 +63,12 @@ app.get('/style.css', function(req, res){
 
 app.get('/reddit', function(req, res){
   res.send(randArrayElement(promptsArray));
+});
+
+app.post('/user', function(req, res){
+
+
+  res.send('We got this!!', req)
 });
 
 /*----------------------
