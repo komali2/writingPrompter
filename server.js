@@ -90,7 +90,7 @@ app.get('/reddit', function(req, res){
 });
 
 app.post('/user', function(req, res){
-  userPromptsArray.push(req.body.prompt);
+  userPromptsArray.push(validateString(req.body.prompt));
   res.send(userPromptsArray);
 });
 
