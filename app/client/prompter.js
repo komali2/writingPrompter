@@ -37,12 +37,24 @@ app.service('promptServicer', ['$http', function($http){
     });
   }
 
-  this.userPromptSubmit = function(){
-
+  this.userPromptSubmit = function(data){
+    $http({
+      method: 'POST',
+      url: '/user',
+      data: data
+    }).then(function success(res){
+      if(res){
+        console.log('User prompt success!', res);
+      }
+    }, function failure(res){
+      if(res){
+        console.log('User prompt failed!', res);
+      }
+    });
   }
 
   this.userPromptGet = function(){
-    
+
   }
 
 
