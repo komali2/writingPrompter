@@ -19,6 +19,28 @@ function randArrayElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
+//sanitizes strings
+function validateString(data) {
+    //iterate through the string, add escape characters for dangerous characters
+    var entityMap = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+      '/': '&#x2F;',
+      '`': '&#x60;',
+      '=': '&#x3D;'
+    };
+
+    function escapeHtml (string) {
+      return String(string).replace(/[&<>"'`=\/]/g, function fromEntityMap (s) {
+        return entityMap[s];
+      });
+    }
+    return escapeHtml(data);
+  }
+
 
 /*----------------------
 REDDIT API
