@@ -6,7 +6,7 @@ var options = {
   host: 'www.reddit.com',
   path: '/r/writingprompts/new.json?sort=new'
 };
-
+var promptsArray = [];
 var redReq = http.get(options, function(res){
   //console.log('STATUS: ' + res.statusCode);
   //console.log('HEADERS: ' + JSON.stringify(res.headers));
@@ -17,10 +17,16 @@ var redReq = http.get(options, function(res){
   }).on('end', function(){
     var body = Buffer.concat(bodyChunks);
     body = JSON.parse(body);
-    console.log('BODY data keys: ' + Object.keys(body.data.children));
-    console.log('BODY data text:' + JSON.stringify(body.data.children[0].data.title));
-  })
+    //console.log('BODY data keys: ' + Object.keys(body.data.children));
+    //console.log('BODY data text:' + JSON.stringify(body.data.children[0].data.title));
+    for(var i = 0; i < body.data.children.length; i++){
+      promptsArray.push(body.data.children[i].data.title);
+
+    }
+    console.log(promptsArray);
+  });
 });
+
 
 redReq.on('error', function(e){
   console.log('ERROR: ' + e.message);
