@@ -81,8 +81,8 @@ app.controller('promptController', function($scope, promptServicer){
     });
   }
 
-  $scope.userPromptGet = function(){
-    promptServicer.userPromptGet($scope.userPrompt);
+  $scope.userPromptSubmit = function(){
+    promptServicer.userPromptSubmit($scope.userPrompt);
   }
 
   $scope.userPromptShow = function(){
