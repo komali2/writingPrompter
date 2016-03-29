@@ -43,8 +43,10 @@ app.service('promptServicer', ['$http', function($http){
     });
   }
 
-  this.userPromptGet = function(){
-
+  this.userPromptShow = function(cb){
+    $http.get('/user').then(function(response){
+      cb(res);
+    });
   }
 
 
@@ -76,6 +78,8 @@ app.controller('promptController', function($scope, promptServicer){
   }
 
   $scope.userPromptShow = function(){
-
+    promptServicer.userPromptShow(function(res){
+      $scope.prompt = res.data;
+    });
   }
 });
