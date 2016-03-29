@@ -36,6 +36,17 @@ app.service('promptServicer', ['$http', function($http){
       cb(res);
     });
   }
+
+  this.userPromptSubmit = function(){
+
+  }
+
+  this.userPromptGet = function(){
+    
+  }
+
+
+
 }]);
 
   /*----------------------
@@ -56,5 +67,13 @@ app.controller('promptController', function($scope, promptServicer){
     promptServicer.redditPromptShow(function(res){
       $scope.prompt = res.data;
     });
+  }
+
+  $scope.userPromptGet = function(){
+
+  }
+
+  $scope.userPromptShow = function(){
+
   }
 });
