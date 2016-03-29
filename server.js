@@ -50,7 +50,7 @@ app.get('/style.css', function(req, res){
 });
 
 app.get('/reddit', function(req, res){
-  res.send(promptsArray);
+  res.send(promptsArray[0]);
 });
 
 /*----------------------
