@@ -21,9 +21,8 @@ var redReq = http.get(options, function(res){
   }).on('end', function(){
     var body = Buffer.concat(bodyChunks);
     body = JSON.parse(body);
-      //adds the titles from the /new prompts into an array
-      promptsArray.push(body.data.children[i].data.title);
-    }
+    //adds the titles from the /new prompts into an array
+    promptsArray.push(body.data.children[i].data.title);
   });
 });
 //reddit request error handling
