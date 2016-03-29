@@ -18,6 +18,17 @@ function randArrayElement(array) {
     this.promptShow = function(){
       return randArrayElement(this.promptList);
     }
+
+    this.redditPromptShow = function(cb){
+      $http({
+        method: 'GET',
+        url: '/reddit'
+      }).then(function success(res){
+        cb(res);
+      }, function failure(res){
+        cb(res);
+      });
+    }
   });
 
   //controller for all things dealing with the prompt area in the view, index.html
@@ -27,5 +38,11 @@ function randArrayElement(array) {
       //sets the {{prompt}} area in index.html to a random element in the
       //prompts array
       $scope.prompt = promptServicer.promptShow();
+    }
+    $scope.redditPromptShow = function(){
+      $scope.prompt = 'Loading a prompt...';
+      promptServicer.redditPromptShow(function(res){
+        $scope.prompt = res;
+      });
     }
   });
