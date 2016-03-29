@@ -71,6 +71,10 @@ app.post('/user', function(req, res){
   userPromptsArray.push(req.body.prompt);
   res.send(userPromptsArray);
 });
+
+app.get('/user', function(req, res){
+  res.send(randArrayElement(userPromptsArray));
+});
 /*----------------------
 SERVER INIT
 ------------------------*/
