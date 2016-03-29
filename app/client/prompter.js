@@ -89,6 +89,8 @@ app.controller('promptController', function($scope, promptServicer){
   }
 
   $scope.userPromptDelete = function(){
-    promptServicer.userPromptDelete();
+    if($scope.userPrompt === 'bananas'){
+      promptServicer.userPromptDelete();
+    }
   }
 });
