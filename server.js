@@ -16,7 +16,10 @@ HELPER FUNCTIONS
 
 function cleanArray(array){
   if(array.length > 50){
-    array.slice(0, 10);
+    return array.slice(2);
+  }
+  else{
+    return array;
   }
 }
 
@@ -96,6 +99,7 @@ app.get('/reddit', function(req, res){
 
 app.post('/user', function(req, res){
   userPromptsArray.push(validateString(req.body.prompt));
+  userPromptsArray = cleanArray(userPromptsArray);
   res.send(userPromptsArray);
 });
 
@@ -119,5 +123,5 @@ app.listen(process.env.PORT || 3000, function(){
 /*----------------------
 MAINTENANCE
 ------------------------*/
-setInterval(cleanArray(userPromptsArray), 300000);
-setInterval(cleanArray(redditPromptsArray), 300000);
+//setInterval(function(){cleanArray(userPromptsArray)}, 3000);
+//setInterval(cleanArray(redditPromptsArray), 300000);
