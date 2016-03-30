@@ -123,5 +123,3 @@ app.listen(process.env.PORT || 3000, function(){
 /*----------------------
 MAINTENANCE
 ------------------------*/
-//setInterval(function(){cleanArray(userPromptsArray)}, 3000);
-//setInterval(cleanArray(redditPromptsArray), 300000);
