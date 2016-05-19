@@ -31,8 +31,5 @@ function randArrayElement(array) {
 }
 
 module.exports = function(req, res){
-
-
   res.send(randArrayElement(redditPromptsArray));
-
 };
