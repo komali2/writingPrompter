@@ -12,3 +12,5 @@ app.use(express.static(path.join(__dirname, '../app/client')));
 app.use('/external', apiRouter);
 
 require('./api/apiRouter.js')(apiRouter);
+
+module.exports = app;
