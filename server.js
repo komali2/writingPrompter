@@ -1,5 +1,4 @@
 
-// var http = require('http');
 // var bodyParser = require('body-parser');
 
 var app = require('./server/main.js');
@@ -83,9 +82,7 @@ redReq.on('error', function(e){
 /*----------------------
 ROUTING
 ------------------------*/
-app.use(bodyParser.json());
-app.use(express.static(__dirname + '/app/client'));
-app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/app/client/index.html');
