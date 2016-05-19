@@ -1,7 +1,13 @@
-var express = require('express');
-var app = express();
-var http = require('http');
-var bodyParser = require('body-parser');
+// var express = require('express');
+// var app = express();
+// var http = require('http');
+// var bodyParser = require('body-parser');
+
+var app = require('./server/main.js');
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Prompter listening on port 3000.");
+});
+
 
 var options = {
   host: 'www.reddit.com',
@@ -74,6 +80,7 @@ redReq.on('error', function(e){
   console.log('ERROR: ' + e.message);
 });
 
+
 /*----------------------
 ROUTING
 ------------------------*/
@@ -116,9 +123,6 @@ app.delete('/user', function(req, res){
 SERVER INIT
 ------------------------*/
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Prompter listening on port 3000.");
-});
 
 /*----------------------
 MAINTENANCE
