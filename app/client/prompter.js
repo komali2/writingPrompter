@@ -24,35 +24,35 @@ app.service('promptServicer', ['$http', function($http){
 
   this.promptShow = function(){
     return randArrayElement(this.promptList);
-  }
+  };
 
   this.redditPromptShow = function(cb){
     $http({
       method: 'GET',
-      url: '/reddit'
+      url: '/external/reddit'
     }).then(function success(res){
       cb(res);
     }, function failure(res){
       cb(res);
     });
-  }
+  };
 
   this.userPromptSubmit = function(data){
     var sendMe = {prompt: data};
-    $http.post('/user', sendMe).then(function(response){
+    $http.post('/external/user', sendMe).then(function(response){
     });
-  }
+  };
 
   this.userPromptShow = function(cb){
-    $http.get('/user').then(function(res){
+    $http.get('/external/user').then(function(res){
       cb(res);
     });
-  }
+  };
 
   this.userPromptDelete = function(){
-    $http.delete('/user').then(function(res){
+    $http.delete('/external/user').then(function(res){
     });
-  }
+  };
 
 }]);
 
@@ -67,28 +67,28 @@ app.controller('promptController', function($scope, promptServicer){
     //sets the {{prompt}} area in index.html to a random element in the
     //prompts array
     $scope.prompt = promptServicer.promptShow();
-  }
+  };
   $scope.redditPromptShow = function(){
     $scope.prompt = 'Loading a prompt...';
     promptServicer.redditPromptShow(function(res){
       $scope.prompt = res.data;
     });
-  }
+  };
 
   $scope.userPromptSubmit = function(){
     promptServicer.userPromptSubmit($scope.userPrompt);
     $scope.userPrompt = "";
-  }
+  };
 
   $scope.userPromptShow = function(){
     promptServicer.userPromptShow(function(res){
       $scope.prompt = res.data;
     });
-  }
+  };
 
   $scope.userPromptDelete = function(){
     if($scope.userPrompt === 'bananas'){
       promptServicer.userPromptDelete();
     }
-  }
+  };
 });
