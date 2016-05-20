@@ -1,7 +1,7 @@
 angular.module('writingPrompter')
   .factory('redditFactory', function($http){
     var exports = {};
-    exports.getRedditPrompts = function(cb){
+    exports.getPrompt = function(cb){
       $http({
         method: 'GET',
         url: '/external/reddit'
@@ -12,7 +12,7 @@ angular.module('writingPrompter')
         cb(res);
       });
     };
-    
+
     return exports;
 
   });
