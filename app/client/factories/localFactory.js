@@ -12,4 +12,6 @@ angular.module('writingPrompter', [])
     exports.getPrompts = function(){
       return helperFactory.randArrayElement(promptList);
     };
+
+    return exports;
   });
