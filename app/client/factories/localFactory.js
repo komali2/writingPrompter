@@ -9,7 +9,7 @@ angular.module('writingPrompter')
     var prompt5 = "Where did you stash the DNA?";
     promptList.push(prompt1, prompt2, prompt3, prompt4, prompt5);
 
-    exports.getPrompts = function(){
+    exports.getPrompt = function(){
       return helperFactory.randArrayElement(promptList);
     };
 
