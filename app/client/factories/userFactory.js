@@ -13,7 +13,18 @@ angular.module('writingPrompter', [])
         cb(res);
       });
     };
-    exports.submitPrompt = function(data){};
+    exports.submitPrompt = function(data){
+      $http({
+        method: 'POST',
+        url: '/external/user',
+        data: data
+      }).then(function success(res){
+        cb(res);
+      }, function failure(res){
+        console.log('error in postUserPrompts factory', res);
+        cb(res);
+      });
+    };
     exports.deletePrompts = function(){};
 
     return exports;
