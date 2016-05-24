@@ -1,7 +1,7 @@
 angular.module('writingPrompter', [])
   .controller('mainController', [
     $scope, redditFactory, userFactory, localFactory,
-    function($scope, redditFactory){
+    function($scope, redditFactory, userFactory, localFactory){
 
       $scope.localPromptShow = function(){
         $scope.prompt = 'Loading a prompt...';

@@ -25,7 +25,16 @@ angular.module('writingPrompter', [])
         cb(res);
       });
     };
-    exports.deletePrompts = function(){};
+    exports.deletePrompts = function(){
+      $http({
+        method: 'DELETE',
+        url: '/external/user'
+      }).then(function success(res){
+        return true;
+      }, function failure(res){
+        console.log('error in deleteUserPrompts factory', res);
+      });
+    };
 
     return exports;
   });
