@@ -1,6 +1,6 @@
-angular.module('writingPrompter', [])
-  .controller('mainController', [
-    $scope, redditFactory, userFactory, localFactory,
+var app = angular.module('writingPrompter', []);
+  app.controller('mainController', [
+    '$scope', 'redditFactory', 'userFactory', 'localFactory',
     function($scope, redditFactory, userFactory, localFactory){
 
       $scope.localPromptShow = function(){

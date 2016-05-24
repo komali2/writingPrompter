@@ -1,4 +1,4 @@
-angular.module('writingPrompter', [])
+angular.module('writingPrompter')
   .factory('localFactory', function(helperFactory){
     var exports = {};
     var promptList = [];

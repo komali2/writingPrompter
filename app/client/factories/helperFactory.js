@@ -1,4 +1,4 @@
-angular.module('writingPrompter', [])
+angular.module('writingPrompter')
   .factory('helperFactory', function(){
     var exports = {};
 
