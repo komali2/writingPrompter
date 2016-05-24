@@ -19,10 +19,10 @@ angular.module('writingPrompter')
         url: '/external/user',
         data: data
       }).then(function success(res){
-        cb(res);
+        return true;
       }, function failure(res){
         console.log('error in postUserPrompts factory', res);
-        cb(res);
+        return false;
       });
     };
     exports.deletePrompts = function(){

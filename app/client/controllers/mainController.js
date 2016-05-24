@@ -20,8 +20,8 @@ var app = angular.module('writingPrompter', []);
           $scope.prompt = prompt.data;
         });
       };
-      $scope.userPromptSubmit = function(data){
-        var sendMe = {prompt: data};
+      $scope.userPromptSubmit = function(){
+        var sendMe = {prompt: $scope.userPrompt};
         userFactory.submitPrompt(sendMe);
       };
       $scope.userPromptDelete = function(){
