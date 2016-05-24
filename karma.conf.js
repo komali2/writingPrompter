@@ -3,7 +3,10 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     files: [
-      '*.js'
+      'node_modules/angular/angular.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'client/**/*.js',
+      'tests/*.js'
     ]
   })
 }
