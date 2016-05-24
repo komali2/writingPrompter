@@ -13,5 +13,5 @@ angular.module('writingPrompter', [])
         redditFactory.getPrompts(function(prompt){
           $scope.prompt = prompt.data;
         });
-      }
+      };
   }]);
