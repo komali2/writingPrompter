@@ -12,28 +12,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-  <body ng-app="writingPrompter">
-      <div id='container' ng-controller="mainController">
-        <div id='newPromptArea'>
-          <input type = 'text' id='userPromptBox' ng-model='userPrompt' />
-          <button id='buttonNewPrompt' type = 'button' ng-click='userPromptSubmit()'>
+  <body class='container' ng-app="writingPrompter">
+      <div class='row' id='container' ng-controller="mainController">
+        <div class='col s12' id='newPromptArea'>
+          <input class='col s9' type = 'text' id='userPromptBox' ng-model='userPrompt' />
+          <button class='col s3' id='buttonNewPrompt' type = 'button' ng-click='userPromptSubmit()'>
             Submit Prompt
           </button>
         </div>
-          <div id='getPromptsArea'>
+          <div class='col s12' id='getPromptsArea'>
             <span id='clicker'>
-              <button id='buttonStatic' type='button' ng-click="localPromptShow()">
+              <button class='col s3'id='buttonStatic' type='button' ng-click="localPromptShow()">
                  New Prompt
                </button>
-               <button id='buttonReddit' type='button' ng-click="redditPromptShow()">
+               <button class='col s3' id='buttonReddit' type='button' ng-click="redditPromptShow()">
                  New Reddit Prompt
               </button>
-              <button id='buttonUserPrompt' type='button' ng-click='userPromptShow()'>
+              <button class='col s3' id='buttonUserPrompt' type='button' ng-click='userPromptShow()'>
                 New User Prompt
               </button>
-              <button id='buttonDelete' type='button' ng-click='userPromptDelete()'>
+              <button class='col s3' id='buttonDelete' type='button' ng-click='userPromptDelete()'>
                 Clear User Prompts
               </button>
             </span>
