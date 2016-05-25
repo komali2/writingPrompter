@@ -13,34 +13,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
   </head>
-  <body class='container' ng-app="writingPrompter">
-      <div class='row' id='container' ng-controller="mainController">
+  <body class='container grey lighten-2' ng-app="writingPrompter">
+    <div class='section'>
+      <div class='row deep-purple lighten-3 z-depth-2' id='container' ng-controller="mainController">
         <div class='col s12' id='newPromptArea'>
           <input class='col s9' type = 'text' id='userPromptBox' ng-model='userPrompt' />
-          <button class='col s3' id='buttonNewPrompt' type = 'button' ng-click='userPromptSubmit()'>
+          <button class='col s3 waves-effect waves-dark black-text btn amber lighten-5' id='buttonNewPrompt' type = 'button' ng-click='userPromptSubmit()'>
             Submit Prompt
           </button>
         </div>
           <div class='col s12' id='getPromptsArea'>
             <span id='clicker'>
-              <button class='col s3'id='buttonStatic' type='button' ng-click="localPromptShow()">
+              <button class='col s3 waves-effect waves-dark black-text btn amber lighten-5'id='buttonStatic' type='button' ng-click="localPromptShow()">
                  New Prompt
                </button>
-               <button class='col s3' id='buttonReddit' type='button' ng-click="redditPromptShow()">
+               <button class='col s3 waves-effect waves-dark black-text btn amber lighten-5' id='buttonReddit' type='button' ng-click="redditPromptShow()">
                  New Reddit Prompt
               </button>
-              <button class='col s3' id='buttonUserPrompt' type='button' ng-click='userPromptShow()'>
+              <button class='col s3 waves-effect waves-dark black-text btn amber lighten-5' id='buttonUserPrompt' type='button' ng-click='userPromptShow()'>
                 New User Prompt
               </button>
-              <button class='col s3' id='buttonDelete' type='button' ng-click='userPromptDelete()'>
+              <button class='col s3 waves-effect waves-dark black-text btn amber lighten-5' id='buttonDelete' type='button' ng-click='userPromptDelete()'>
                 Clear User Prompts
               </button>
             </span>
           </div>
-          <div class='col s10' id='promptArea'>
-            {{ prompt }}
+          <div class='col s10 valign-wrapper' id='promptArea'>
+            <h5 class='valign center-align'>{{ prompt }}</h5>
           </div>
       </div>
+    </div>
 
 
   </body>
